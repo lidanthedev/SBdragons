@@ -2415,16 +2415,18 @@ function guikey(char, key, gui, event) {
 					val.inputlist.splice(val.cursorindex, 0, char)
 					val.input = removeColors(val.inputlist.join(""));
 					// console.log(`${oldinput} ${val.input}`);
-					TestText.setString(val.input);
-					TestText.setWidth(val.inputText.getWidth());
-					TestText.setMaxLines(1);
-					if (TestText.exceedsMaxLines()) {
-						val.cursor = `§c|§r`;
-						val.input = oldinput;
-					}
-					else {
-						val.cursorindex += 1;
-					}
+					// TestText.setString(val.input); STACKOVERFLOW???
+					// console.log(`[anychattypeIF] typed ${key} / ${char} at ${val.cursorindex} / ${val.input.charAt(val.cursorindex)} / ${val.input}`);
+					// TestText.setMaxWidth(val.inputText.getWidth());
+					// TestText.setMaxLines(1);
+					// if (TestText.exceedsMaxLines()) {
+					// 	val.cursor = `§c|§r`;
+					// 	val.input = oldinput;
+					// }
+					// else {
+					// 	val.cursorindex += 1;
+					// }
+					val.cursorindex += 1;
 					// input = input + char;
 					if (val.cursorindex < 0) {
 						val.cursorindex = 0;
@@ -2432,6 +2434,7 @@ function guikey(char, key, gui, event) {
 					if (val.cursorindex > val.input.length) {
 						val.cursorindex = val.input.length;
 					}
+					// console.log(`[anychattype] typed ${key} / ${char} at ${val.cursorindex} / ${val.input.charAt(val.cursorindex)} / ${val.input}`);
 					// throw Error(`MAXI ERROR! ${cursorindex}`);
 				}
 			}
@@ -2633,8 +2636,7 @@ function renderchat(gui, x, y, s4) {
 			}
 			WheelMove = 0;
 			if (opengui.includes("Chat") && Settings.chattabnormal) {
-				GlStateManager.func_179094_E(); // push
-
+				// GlStateManager.func_179094_E(); // push
 				autocompletebox
 					.setX(2)
 					.setY(Renderer.screen.getHeight() - 220)
@@ -2645,10 +2647,10 @@ function renderchat(gui, x, y, s4) {
 				autocompletetext
 					.setX(3)
 					.setY(Renderer.screen.getHeight() - 220)
-					.setWidth(Renderer.screen.getWidth())
+					.setMaxWidth(Renderer.screen.getWidth())
 					.draw();
 
-				GlStateManager.func_179121_F(); // pop
+				// GlStateManager.func_179121_F(); // pop
 				// console.log(`${autocompletetext.getString()}`);
 			}
 			else if (Settings.chattabinv) {
@@ -2656,9 +2658,8 @@ function renderchat(gui, x, y, s4) {
 				autocompletetext
 					.setX(3)
 					.setY(Renderer.screen.getHeight() - 220)
-					.setWidth(Renderer.screen.getWidth())
+					.setMaxWidth(Renderer.screen.getWidth())
 					.draw();
-
 			}
 			nninput = ninput;
 			ninput = chatinput.input;
@@ -2717,7 +2718,7 @@ function renderchat(gui, x, y, s4) {
 		chatinput.inputText
 			.setX(scamx + 2)
 			.setY(Renderer.screen.getHeight() - 12)
-			.setWidth(Renderer.screen.getWidth())
+			.setMaxWidth(Renderer.screen.getWidth())
 			.draw();
 		if (opengui.includes("Chat"))
 			return;

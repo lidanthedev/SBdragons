@@ -191,7 +191,7 @@
 		percent_slider = 0.0
 
 	[general.category]
-		devcode = ""
+		devcode = "debuganychat"
 		color_picker = "255,255,0,0"
 		text = "Made by ERRORMAN"
 		light_auction_timer = false
