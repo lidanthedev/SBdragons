@@ -1,0 +1,261 @@
+
+[griffin]
+
+	[griffin.mobs]
+		glowing = true
+		glowing_color = "255,197,227,20"
+
+	[griffin.burrow]
+		waypoint = true
+		glowing_block_color = "232,241,241,0"
+		name_waypoint = true
+		beacon_waypoint = false
+		glowing_block = true
+		glowing_block_style = 2
+
+[slayer]
+
+	[slayer.auto]
+		auto_open_maddox_when_slain = false
+
+	[slayer.fix]
+		shortbow_fix = true
+
+	[slayer.alert]
+		alert_when_boss_spawns = false
+		alert_when_boss_killed = false
+		alert_when_miniboss_alive = false
+
+	[slayer.glow]
+		glowing_boss = false
+		glowing_miniboss_color = "255,255,0,0"
+		glowing_boss_color = "255,255,0,0"
+		glowing_miniboss = false
+
+[esp]
+
+	[esp.wither_essence]
+		wither_essence = false
+		color = "255,0,0,0"
+
+	[esp.fairy_souls]
+		color = "255,255,0,255"
+		fairy_souls = false
+
+	[esp.chests]
+		color = "255,255,200,0"
+		chests = false
+
+[dungeons]
+
+	[dungeons.helpers]
+		health_notify = false
+		death_counter = true
+		revive_stone_names = false
+		watcher_ready = true
+		secret_counter = false
+		waypoints = false
+		"auto_secret_waypoints_[beta]" = false
+		teleport_names = false
+
+	[dungeons.solvers]
+		blaze = true
+		ice_puzzle = true
+		terminals = true
+		3_scammers = true
+
+[convert]
+	backup_original_folder = true
+	module_name = ""
+
+[action_bar]
+
+	[action_bar.xp_gain]
+		x = 379
+		active = false
+		y = 412
+		time = 100
+
+	[action_bar.mana]
+		background = 0
+		x = 515
+		active = true
+		y = 471
+
+	[action_bar.fsb]
+		background = 0
+		x = 553
+		active = true
+		y = 442
+
+	[action_bar.mover]
+		health = false
+
+	[action_bar.defense]
+		background = 0
+		x = 515
+		active = true
+		y = 455
+
+	[action_bar.health]
+		background = 0
+		x = 391
+		active = true
+		y = 431
+
+	[action_bar.secrets]
+		background = 0
+		x = 501
+		active = true
+		y = 444
+
+[updates]
+
+	[updates.auto]
+		"auto_updater_reload_[beta]" = true
+		"auto_updater_[beta]" = true
+
+		[updates.auto.update_0]
+
+			[updates.auto.update_0.0]
+				3 = false
+
+	[updates.disable]
+
+		[updates.disable.update_0]
+
+			[updates.disable.update_0.0]
+				1 = false
+				2 = false
+				3 = false
+
+[auction]
+
+	[auction.category]
+		alert_before_light_action = 1
+		light_auction_now = false
+		background = 1
+		light_auction_timer = false
+
+[qol]
+
+	[qol.pets]
+		x = 50
+		active = false
+		y = 50
+
+	[qol.idk]
+		item_rarity_opacity = 31
+		"item_rarity_[beta]" = false
+		burp_counter = false
+		item_rarity = false
+
+	[qol.stack]
+		show_enchant_level = true
+
+	[qol.chat]
+		render_mob_names = true
+		new_tabcomplete_in_normal_chat = true
+		chat_connect = true
+		replacer = false
+		new_tabcomplete_in_chat_inv = true
+		clear_chat_inv = false
+		chat_inv = true
+		chat_inv_anywhere = true
+		chat_inv_connect = false
+
+	[qol.render_mob]
+		render_mob_names = false
+		render_mob_background = true
+		render_mob_names_background = false
+
+	[qol.wither_shield]
+		wither_shield_ready = false
+		x = 419
+		y = 417
+		wither_shield_cooldown = true
+
+	[qol.item_rarity]
+		item_rarity_opacity = 100
+		"item_rarity_[beta]" = false
+
+	[qol.backport]
+		no_sword_block = true
+
+	[qol.burp]
+		burp_counter = true
+
+[general]
+
+	[general.eeeeee]
+		percent_slider = 0.0
+
+	[general.category]
+		devcode = ""
+		color_picker = "255,255,0,0"
+		text = "Made by ERRORMAN"
+		light_auction_timer = false
+
+[performance]
+
+	[performance.1]
+		renderworld = true
+		renderentity = false
+
+	[performance.2]
+		tick = false
+
+	[performance.3]
+		packetsent = false
+		renderworld = false
+		guikey = false
+		renderentity = true
+		renderoverlay = false
+		chat = false
+		packetreceived = false
+		postguirender = false
+		playerinteract = false
+
+	[performance.4]
+		guiopened = false
+		guimouseclick = false
+		soundplay = false
+		actionbar = false
+
+	[performance.5]
+		step = false
+		dragged = false
+
+[glowing]
+
+	[glowing.entities]
+		items_color = "255,0,255,255"
+		npcs = false
+		players_and_guys = false
+		withers = false
+		ender_guards_color = "255,255,0,255"
+		players = false
+		ender_gaurds = true
+		players_color = "255,255,255,255"
+		very_ancient_skeletons_color = "255,255,0,0"
+		iron_golem = false
+		dragonss_color = "255,255,255,255"
+		npcs_color = "255,255,255,255"
+		withers_color = "255,255,255,255"
+		very_ancient_skeleton = false
+		guys = true
+		dragons_color = "255,255,255,255"
+		hide_players = false
+		iron_golems_color = "255,255,255,255"
+		items = true
+		dragons = true
+
+[loot]
+
+	[loot.display]
+		hide_numbers = false
+		x = 15
+		active = false
+		y = 50
+		hide_title = false
+

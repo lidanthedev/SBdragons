@@ -1,0 +1,9 @@
+{
+  "$schema": "../CTAutocomplete/schema.json",
+  "name": "&8&l&kX&b&lSkyblock &d&lDragons&8&l&kX",
+  "author": "LidanTheGamer and MAXIIIIII",
+  "entry": "index.js",
+  "version": "0.0.9",
+  "requires": [ "Vigilance", "PogData", "FileUtilities", "RenderLib" ],
+  "description": "&6by &bLidanTheGamer &6, &0MAXIIIIII &6And &aXxXofirXxX\n\n Adds Useful addons for The Skyblock Dragons Server\n Like Solvers\n Backporting\n Action bar mover"
+}
