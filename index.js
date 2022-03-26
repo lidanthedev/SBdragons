@@ -849,6 +849,7 @@ register("step", () => {
 	blockespfairy = [];
 	blockespessence = [];
 	blockespchest = [];
+	if (World.getWorld() == null) {return;}
 	const TileEntitys = World.getWorld().field_147482_g
 	TileEntitys.forEach(entity => {
 		const eNBT = `${entity.serializeNBT()}`;
@@ -1769,6 +1770,7 @@ function hitblcokevent(e1, e2, e3) {
 	if (`${e1}`.includes(`C07`)) {
 		if (Settings.griffinburrowwaypoint || Settings.griffinburrowesp) {
 			let block = Player.lookingAt();
+			if (block instanceof BlockType) return;
 			// console.log(`blockloc ${block.getX()} ${block.getY()} ${block.getZ()}`)
 			// console.log(`grifloc ${griffinloc}`)
 			if (block.getX() == griffinloc[0] && block.getY() == griffinloc[1] && block.getZ() == griffinloc[2]) {

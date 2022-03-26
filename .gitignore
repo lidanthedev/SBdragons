@@ -2,3 +2,6 @@ config.toml
 .vs
 .idea
 SBdragons.old
+.data.json
+*.zip
+*.rar
