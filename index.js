@@ -6,16 +6,16 @@ import { drawBox } from "./features/betterGlowingEffect";
 import { Color } from "Vigilance";
 import FileUtilities from "../FileUtilities/main";
 import RenderLib from "../RenderLib/index.js";
- //import {
-	// Window,
-	// UIContainer, UIBlock, UIRoundedRectangle, UICircle, UIPoint, UIShape, UIText, UIWrappedText, UITextInput, UIImage, ScrollComponent,
-	// PixelConstraint, CenterConstraint, SiblingConstraint, CramSiblingConstraint,
-	// RelativeConstraint, AspectConstraint, TextAspectConstraint, ImageAspectConstraint, FillConstraint, ChildBasedSizeConstraint, ChildBasedMaxSizeConstraint, ScaledTextConstraint,
-	// AdditiveConstraint, SubtractiveConstraint, MinConstraint, MaxConstraint,
-	// ConstantColorConstraint, RainbowColorConstraint,
-	// ScissorEffect, StencilEffect,
-	// Animations
- //} from "Elementa/index";
+//import {
+// Window,
+// UIContainer, UIBlock, UIRoundedRectangle, UICircle, UIPoint, UIShape, UIText, UIWrappedText, UITextInput, UIImage, ScrollComponent,
+// PixelConstraint, CenterConstraint, SiblingConstraint, CramSiblingConstraint,
+// RelativeConstraint, AspectConstraint, TextAspectConstraint, ImageAspectConstraint, FillConstraint, ChildBasedSizeConstraint, ChildBasedMaxSizeConstraint, ScaledTextConstraint,
+// AdditiveConstraint, SubtractiveConstraint, MinConstraint, MaxConstraint,
+// ConstantColorConstraint, RainbowColorConstraint,
+// ScissorEffect, StencilEffect,
+// Animations
+//} from "Elementa/index";
 import TextBox from 'SBdragons/EGUI.js';
 import PogObject from "PogData";
 // import { registerForge, unregisterForge } from "../ForgeEvents/exports.js"
@@ -95,7 +95,7 @@ function myGuiRenderFunction(mouseX, mouseY, partialTicks) {
 		var val = displays[property];
 		if (val.getShouldRender) {
 			Renderer.drawRect(Renderer.color(255, 255, 255, 100), val.getRenderX() - 1, val.getRenderY() - 1, displays[`${property}`].getWidth() + 2, 10 * val.getLines().length);
-        }
+		}
 		// val.ninput = val.input;
 		//if (val.name != "chat" && val.show) {
 		//	val.Draw()
@@ -126,10 +126,10 @@ function myGuiRenderFunction(mouseX, mouseY, partialTicks) {
 	//if (Settings.petda) {
 	//	Renderer.drawRect(Renderer.color(255, 255, 255, 100), Settings.petdx - 1, Settings.petdy - 1, displays[`petdisplay`].getWidth() + 2, 10);
 	//}
-	
-    // Renderer.scale(1.5, 1.5)
-    // Renderer.drawString("CLICK FOR FREE MONEY", renderSquareX, renderSquareY + 50);
-    // Renderer.scale(1, 1)
+
+	// Renderer.scale(1.5, 1.5)
+	// Renderer.drawString("CLICK FOR FREE MONEY", renderSquareX, renderSquareY + 50);
+	// Renderer.scale(1, 1)
 }
 
 function myGuiClickedFunction(mouseX, mouseY, button) {
@@ -214,11 +214,11 @@ function myGuiClickedFunction(mouseX, mouseY, button) {
 			moving = "withershield";
 		}
 	}
-    //if (button == 0) {
+	//if (button == 0) {
 	//renderDisplayX = mouseX;
 	//renderDisplayY = mouseY;
 	//displays[`LightahDisplay`].setRenderLoc(renderDisplayX, renderDisplayY);
-    //}
+	//}
 }
 
 //function myGuiDragFunction(dx, dy, x, y, button) {
@@ -236,7 +236,7 @@ function myGuiClickedFunction(mouseX, mouseY, button) {
 register("dragged", function (dx, dy, x, y, button) {
 	if (Settings.perf_dragged) {
 		return;
-    }
+	}
 	if (!guilocedit.isOpen()) {
 		return;
 	}
@@ -343,7 +343,7 @@ register("tick", everytick);
 function isonskyblock() {
 	if (Settings.textInput == "alwaysskyblock") {
 		return true;
-    }
+	}
 	if (Scoreboard.getScoreboardTitle().includes("Skyblock Dragons")) {
 		return true;
 	}
@@ -375,7 +375,7 @@ function everytick() {
 	// didaction = false;
 	// ChatLib.chat(tickc)
 	// displays[`LightahDisplay`].setBackground(Settings.Lightahbackground);
-    if (!isonskyblock()) {
+	if (!isonskyblock()) {
 		playeractionbar[0] = "";
 		playeractionbar[1] = "";
 		playeractionbar[2] = "";
@@ -392,21 +392,21 @@ function everytick() {
 		if (Settings.dropdht) {
 			displays[`dropdisplay`].setLine(0, `&r`);
 		}
-        else {
+		else {
 			displays[`dropdisplay`].setLine(0, `&bRARE DROPS!`);
-        }
+		}
 		var i = 1;
 		for (var property in Saved.RareDrops) {
-            if (Settings.dropdhn) {
+			if (Settings.dropdhn) {
 				displays[`dropdisplay`].setLine(i, `${property} §6x${Saved.RareDrops[property]}`);
 			}
-            else {
+			else {
 				displays[`dropdisplay`].setLine(i, `${i} ${property} §6x${Saved.RareDrops[property]}`);
-            }
-			
+			}
+
 			i++;
-        }
-    }
+		}
+	}
 
 	if (Settings.Lightahbackground == 0) {
 		displays[`LightahDisplay`].setBackground("none");
@@ -414,7 +414,7 @@ function everytick() {
 		displays[`LightahDisplay`].setBackground("per line");
 	} else if (Settings.Lightahbackground == 2) {
 		displays[`LightahDisplay`].setBackground("full");
-	} 
+	}
 	displays[`LightahDisplay`].setShouldRender(Settings.Lightahtoggle);
 	displays[`petdisplay`].setRenderLoc(Settings.petdx, Settings.petdy);
 	displays[`petdisplay`].setShouldRender(Settings.petda);
@@ -428,7 +428,7 @@ function everytick() {
 		displays[`actionbardisplays1`].setBackground("per line");
 	} else if (Settings.Actionbar1b == 2) {
 		displays[`actionbardisplays1`].setBackground("full");
-	} 
+	}
 	if (playeractionbar[0] != undefined) {
 		displays[`actionbardisplays1`].setRenderLoc(Settings.Actionbar1x, Settings.Actionbar1y);
 		displays[`actionbardisplays1`].setLine(0, playeractionbar[0])
@@ -484,7 +484,7 @@ function everytick() {
 	if (playeractionbar[4] != undefined) {
 		displays[`actionbardisplays5`].setRenderLoc(Settings.Actionbar5x, Settings.Actionbar5y);
 		displays[`actionbardisplays5`].setLine(0, playeractionbar[4] + " " + playeractionbar[5])
-    } else {
+	} else {
 		displays[`actionbardisplays5`].setLine(0, "")
 	}
 
@@ -500,13 +500,13 @@ function everytick() {
 			// displays[`LightahDisplay`].setShouldRender(true);
 			if (isonskyblock()) {
 				ChatLib.command("lightah")
-            } else {
+			} else {
 				whenlightah = "Must be on skyblock!";
-            }
+			}
 		}
 		//else {
 		//	displays[`LightahDisplay`].setShouldRender(false);
-  //      }
+		//      }
 	}
 	if (tickc > 100) {
 		tickc = 0;
@@ -530,7 +530,7 @@ function everytick() {
 //		whenlightah = whenlightah.replace(" seconds", "s");
 //		whenlightah = whenlightah.replace("and ", "");
 
-		
+
 //		var alertbeforah = whenlightah;
 //		var alertbeforahtime = 0;
 //        try {
@@ -620,8 +620,8 @@ function actionbar(message, event) {
 		if (splitted[property].endsWith("✎")) {
 			playeractionbar[2] = splitted[property];
 		}
-    }
-    if (isonskyblock()) {
+	}
+	if (isonskyblock()) {
 		cancel(event);
 		newmsg = message;
 		// ChatLib.chat(message);
@@ -633,7 +633,7 @@ function actionbar(message, event) {
 		if (Settings.Actionbar5a) newmsg = newmsg.replace(" " + playeractionbar[4] + " " + playeractionbar[5], "");
 		// ChatLib.chat(newmsg);
 		ChatLib.actionBar(newmsg);
-    }
+	}
 	// else {
 	//	ChatLib.chat("--------------");
 	//}
@@ -644,8 +644,8 @@ function actionbar(message, event) {
 	//ChatLib.chat(playeractionbar[4]);
 	//ChatLib.chat(playeractionbar[5]);
 	// if (playeractionbar[5] == undefined) {
-		// ChatLib.chat("NOT FOUND 5");
-    // }
+	// ChatLib.chat("NOT FOUND 5");
+	// }
 }
 
 displays[`actionbardisplays1`] = new Display();
@@ -667,7 +667,7 @@ function myChat(message, event) {
 	if (line.includes("Light Auction is starting very soon CLICK to warp there")) {
 		if (Settings.Lightahnow) {
 			Client.showTitle("&e&lNow Light Auction", "&7Remeber now have also wither", 0, 50, 10);
-        }
+		}
 		tickc = -6000;
 		doalert = false;
 	}
@@ -749,7 +749,7 @@ register("renderWorld", () => {
 
 	if (Settings.dungeonice) {
 		if (getDistance(Player.getX(), Player.getY(), Player.getZ(), -975, 131, -1097) < 20) {
-            try {
+			try {
 				drawLineSmall(-985.5, 131.5, -1091.5, -985.5, 131.5, -1093.5, 0, 200, 0);
 				drawLineSmall(-985.5, 131.5, -1093.5, -986.5, 131.5, -1093.5, 0, 200, 0);
 				drawLineSmall(-986.5, 131.5, -1093.5, -986.5, 131.5, -1101.5, 0, 200, 0);
@@ -761,11 +761,11 @@ register("renderWorld", () => {
 				drawLineSmall(-971.5, 131.5, -1102.5, -980.5, 131.5, -1102.5, 0, 200, 0);
 				drawLineSmall(-980.5, 131.5, -1102.5, -980.5, 131.5, -1095.5, 0, 200, 0);
 				drawLineSmall(-980.5, 131.5, -1095.5, -970.5, 131.5, -1095.5, 0, 200, 0);
-            } catch (e) {
+			} catch (e) {
 				ChatLib.chat(`Error Solving Ice ${e}`);
-            }
-			
-        }
+			}
+
+		}
 		// console.log(getDistance(Player.getX(), Player.getY(), Player.getZ(), -975, 131 ,-1097));
 	}
 	if (Settings.griffinburrowesp || Settings.griffinburrowwaypoint) {
@@ -781,58 +781,58 @@ register("renderWorld", () => {
 				RenderLib.drawEspBox(griffinloc[0] + 0.5, griffinloc[1], griffinloc[2] + 0.5, 1, 1, Settings.griffincolor.getRed() / 255, Settings.griffincolor.getGreen() / 255, Settings.griffincolor.getBlue() / 255, Settings.griffincolor.getAlpha() / 255, true);
 			}
 			else if (Settings.griffinespbox == 1) {
-				RenderLib.drawInnerEspBox(griffinloc[0] + 0.5, griffinloc[1], griffinloc[2] + 0.5, 1.001, 1.001, Settings.griffincolor.getRed() / 255, Settings.griffincolor.getGreen() / 255, Settings.griffincolor.getBlue() / 255, Settings.griffincolor.getAlpha()/255, false);
+				RenderLib.drawInnerEspBox(griffinloc[0] + 0.5, griffinloc[1], griffinloc[2] + 0.5, 1.001, 1.001, Settings.griffincolor.getRed() / 255, Settings.griffincolor.getGreen() / 255, Settings.griffincolor.getBlue() / 255, Settings.griffincolor.getAlpha() / 255, false);
 			}
 			else if (Settings.griffinespbox == 2) {
 				RenderLib.drawBaritoneEspBox(griffinloc[0], griffinloc[1], griffinloc[2], 1, 1, Settings.griffincolor.getRed() / 255, Settings.griffincolor.getGreen() / 255, Settings.griffincolor.getBlue() / 255, Settings.griffincolor.getAlpha() / 255, true);
-            }
-            if (Settings.griffinburrowwaypoint) {
+			}
+			if (Settings.griffinburrowwaypoint) {
 				drawString("Burrow", griffinloc[0] + 0.5, griffinloc[1] + 0.5, griffinloc[2] + 0.5, Renderer.color(Settings.griffincolor.getRed(), Settings.griffincolor.getGreen(), Settings.griffincolor.getBlue(), 255), true, 0.8, true, true);
-            }
-        }
+			}
+		}
 	}
 	// if (Settings.textInput == "tileentity") {
-    if (Settings.esp_fairy_active) {
+	if (Settings.esp_fairy_active) {
 		blockespfairy.forEach(entity => {
 			const eLoc = entity.func_174877_v();
 			RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, Settings.esp_fairy_color.getRed() / 255, Settings.esp_fairy_color.getGreen() / 255, Settings.esp_fairy_color.getBlue(), 1, true);
 		})
-    }
-    if (Settings.esp_witheres_active) {
+	}
+	if (Settings.esp_witheres_active) {
 		blockespessence.forEach(entity => {
 			const eLoc = entity.func_174877_v();
 			RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, Settings.esp_witheres_color.getRed() / 255, Settings.esp_witheres_color.getGreen() / 255, Settings.esp_witheres_color.getBlue(), 1, true);
 			// RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, 0, 0, 0, 1, true);
 		})
-    }
-    if (Settings.esp_chest_active) {
+	}
+	if (Settings.esp_chest_active) {
 		blockespchest.forEach(entity => {
 			const eLoc = entity.func_174877_v();
 			RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, Settings.esp_chest_color.getRed() / 255, Settings.esp_chest_color.getGreen() / 255, Settings.esp_chest_color.getBlue(), 1, true);
 			// RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, 139 / 255, 94 / 255, 34 / 255, 1, true);
 		})
-    }
+	}
 	// }
-		//const TileEntitys = World.getWorld().field_147482_g
-		//TileEntitys.forEach(entity => {
-		//	const eNBT = `${entity.serializeNBT()}`;
-		//	const eLoc = entity.func_174877_v();
-		//	if (eNBT.includes(`54e5e1f2-282b-4d66-9f17-52f53e7a34d5`)) {
-		//		// if (getDistance(Player.getX(), Player.getY(), Player.getZ(), eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p()) < 25) {
-		//			RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, 230 / 255, 10 / 255, 250 / 255, 1, true);
-		//		// }
-		//	}
-		//	else if (eNBT.includes(`1862f254-bab8-4189-8c2b-7a92b74b7d71`)) {
-		//		RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, 230 / 255, 10 / 255, 250 / 255, 1, true);
-		//	}
-  //          else {
-		//		// RenderLib.drawEspBox(entity.func_174877_v().func_177958_n(), entity.func_174877_v().func_177956_o(), entity.func_174877_v().func_177952_p(), 1, 1, Settings.griffincolor.getRed() / 255, Settings.griffincolor.getGreen() / 255, Settings.griffincolor.getBlue() / 255, 1, true);
-  //          }
-			
-		//	// console.log(`${entity} ${entity.func_174877_v().func_177958_n()} ${entity.func_174877_v().func_177956_o()} ${entity.func_174877_v().func_177952_p()} ${entity.serializeNBT()}`);
-		//	// drawBox(entity, 1, 1, 1, 2, 1, 1, partialTicks);
-		//})
-  //  }
+	//const TileEntitys = World.getWorld().field_147482_g
+	//TileEntitys.forEach(entity => {
+	//	const eNBT = `${entity.serializeNBT()}`;
+	//	const eLoc = entity.func_174877_v();
+	//	if (eNBT.includes(`54e5e1f2-282b-4d66-9f17-52f53e7a34d5`)) {
+	//		// if (getDistance(Player.getX(), Player.getY(), Player.getZ(), eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p()) < 25) {
+	//			RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, 230 / 255, 10 / 255, 250 / 255, 1, true);
+	//		// }
+	//	}
+	//	else if (eNBT.includes(`1862f254-bab8-4189-8c2b-7a92b74b7d71`)) {
+	//		RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, 230 / 255, 10 / 255, 250 / 255, 1, true);
+	//	}
+	//          else {
+	//		// RenderLib.drawEspBox(entity.func_174877_v().func_177958_n(), entity.func_174877_v().func_177956_o(), entity.func_174877_v().func_177952_p(), 1, 1, Settings.griffincolor.getRed() / 255, Settings.griffincolor.getGreen() / 255, Settings.griffincolor.getBlue() / 255, 1, true);
+	//          }
+
+	//	// console.log(`${entity} ${entity.func_174877_v().func_177958_n()} ${entity.func_174877_v().func_177956_o()} ${entity.func_174877_v().func_177952_p()} ${entity.serializeNBT()}`);
+	//	// drawBox(entity, 1, 1, 1, 2, 1, 1, partialTicks);
+	//})
+	//  }
 	//GlStateManager.func_179121_F();
 	//GL11.glEnable(GL11.GL_TEXTURE_2D);
 	//GL11.glDisable(GL11.GL_BLEND);
@@ -863,9 +863,9 @@ register("step", () => {
 			// RenderLib.drawEspBox(eLoc.func_177958_n(), eLoc.func_177956_o(), eLoc.func_177952_p(), 1, 1, 230 / 255, 10 / 255, 250 / 255, 1, true);
 			blockespfairy.push(entity);
 		}
-        else if (`${entity}`.includes(`Chest`)) {
+		else if (`${entity}`.includes(`Chest`)) {
 			blockespchest.push(entity);
-        }
+		}
 		else {
 			// RenderLib.drawEspBox(entity.func_174877_v().func_177958_n(), entity.func_174877_v().func_177956_o(), entity.func_174877_v().func_177952_p(), 1, 1, Settings.griffincolor.getRed() / 255, Settings.griffincolor.getGreen() / 255, Settings.griffincolor.getBlue() / 255, 1, true);
 		}
@@ -875,25 +875,25 @@ register("step", () => {
 	})
 
 }).setDelay(1);
-	//let entity = smallest;
-	//if (typeof entity === "undefined") return;
-	//drawBox(entity, 255, 0, 0, 2.0, 1, 2, partialTicks);
-	//Tessellator.drawString(
-	//	"Smallest",
-	//	entity.getLastX() + (entity.getX() - entity.getLastX()) * partialTicks,
-	//	entity.getLastY() + (entity.getY() - entity.getLastY()) * partialTicks,
-	//	entity.getLastZ() + (entity.getZ() - entity.getLastZ()) * partialTicks,
-	//	16711680, true, 0.04, false
-	//);
+//let entity = smallest;
+//if (typeof entity === "undefined") return;
+//drawBox(entity, 255, 0, 0, 2.0, 1, 2, partialTicks);
+//Tessellator.drawString(
+//	"Smallest",
+//	entity.getLastX() + (entity.getX() - entity.getLastX()) * partialTicks,
+//	entity.getLastY() + (entity.getY() - entity.getLastY()) * partialTicks,
+//	entity.getLastZ() + (entity.getZ() - entity.getLastZ()) * partialTicks,
+//	16711680, true, 0.04, false
+//);
 
-	//entity = biggest;
-	//drawBox(entity, 0, 255, 0, 2.0, 1, 2, partialTicks);
-	//Tessellator.drawString(
-	//	"Biggest",
-	//	entity.getLastX() + (entity.getX() - entity.getLastX()) * partialTicks,
-	//	entity.getLastY() + (entity.getY() - entity.getLastY()) * partialTicks,
-	//	entity.getLastZ() + (entity.getZ() - entity.getLastZ()) * partialTicks,
-	//	65280, true, 0.04, false
+//entity = biggest;
+//drawBox(entity, 0, 255, 0, 2.0, 1, 2, partialTicks);
+//Tessellator.drawString(
+//	"Biggest",
+//	entity.getLastX() + (entity.getX() - entity.getLastX()) * partialTicks,
+//	entity.getLastY() + (entity.getY() - entity.getLastY()) * partialTicks,
+//	entity.getLastZ() + (entity.getZ() - entity.getLastZ()) * partialTicks,
+//	65280, true, 0.04, false
 
 
 register("renderEntity", function (entity, position, ticks, event) {
@@ -907,50 +907,50 @@ register("renderEntity", function (entity, position, ticks, event) {
 		players[entity.getName()] = entity;
 	}
 	// else if (Settings.rendermobname && entity.getClassName() != "EntityArmorStand" && entity.getClassName() != "EntityWither") {
-		//console.log(entity.getClassName());
-		//const lastX = new Entity(Player.getPlayer()).getLastX();
-		//const lastY = new Entity(Player.getPlayer()).getLastY();
-		//const lastZ = new Entity(Player.getPlayer()).getLastZ();
+	//console.log(entity.getClassName());
+	//const lastX = new Entity(Player.getPlayer()).getLastX();
+	//const lastY = new Entity(Player.getPlayer()).getLastY();
+	//const lastZ = new Entity(Player.getPlayer()).getLastZ();
 
-		//const currentX = Player.getX();
-		//const currentY = Player.getY();
-		//const currentZ = Player.getZ();
+	//const currentX = Player.getX();
+	//const currentY = Player.getY();
+	//const currentZ = Player.getZ();
 
-		// Tessellator.bindTexture(img);
-		//Tessellator.begin()
-		//	.translate(
-		//		lastX + (currentX - lastX) * partialTicks,
-		//		lastY + (currentY - lastY) * partialTicks,
-		//		lastZ + (currentZ - lastZ) * partialTicks
-		//	)
-		//	.pos(-0.5, 0.5, -0.5).tex(0, 0)
-		//	.pos(-0.5, 0.5, 0.5).tex(0, 1)
-		//	.pos(0.5, 0.5, 0.5).tex(1, 1)
-		//	.pos(0.5, 0.5, -0.5).tex(1, 0)
-		//	// .draw();
+	// Tessellator.bindTexture(img);
+	//Tessellator.begin()
+	//	.translate(
+	//		lastX + (currentX - lastX) * partialTicks,
+	//		lastY + (currentY - lastY) * partialTicks,
+	//		lastZ + (currentZ - lastZ) * partialTicks
+	//	)
+	//	.pos(-0.5, 0.5, -0.5).tex(0, 0)
+	//	.pos(-0.5, 0.5, 0.5).tex(0, 1)
+	//	.pos(0.5, 0.5, 0.5).tex(1, 1)
+	//	.pos(0.5, 0.5, -0.5).tex(1, 0)
+	//	// .draw();
 
-		//let partialTicks = Tessellator.INSTANCE.getPartialTicks();
-		//Tessellator.drawString(
-		//	entity.getName(),
-		//	entity.getLastX() + (entity.getX() - entity.getLastX()) * partialTicks,
-		//	entity.getLastY() + (entity.getY() - entity.getLastY()) * partialTicks + entity.getEyeHeight() + 0.5,
-		//	entity.getLastZ() + (entity.getZ() - entity.getLastZ()) * partialTicks,
-		//	16711680, true, 0.04, false
-		//);
+	//let partialTicks = Tessellator.INSTANCE.getPartialTicks();
+	//Tessellator.drawString(
+	//	entity.getName(),
+	//	entity.getLastX() + (entity.getX() - entity.getLastX()) * partialTicks,
+	//	entity.getLastY() + (entity.getY() - entity.getLastY()) * partialTicks + entity.getEyeHeight() + 0.5,
+	//	entity.getLastZ() + (entity.getZ() - entity.getLastZ()) * partialTicks,
+	//	16711680, true, 0.04, false
+	//);
 
-		//const lastX = new Entity(entity.getEntity()).getLastX();
-		//const lastY = new Entity(entity.getEntity()).getLastY();
-		//const lastZ = new Entity(entity.getEntity()).getLastZ();
+	//const lastX = new Entity(entity.getEntity()).getLastX();
+	//const lastY = new Entity(entity.getEntity()).getLastY();
+	//const lastZ = new Entity(entity.getEntity()).getLastZ();
 
-		//const currentX = entity.getX();
-		//const currentY = entity.getY();
-		//const currentZ = entity.getZ();
+	//const currentX = entity.getX();
+	//const currentY = entity.getY();
+	//const currentZ = entity.getZ();
 
-		//const DrawX = lastX + (currentX - lastX) * ticks;
-		//const DrawY = lastY + (currentY - lastY) * ticks;
-		//const DrawZ = lastZ + (currentZ - lastZ) * ticks;
+	//const DrawX = lastX + (currentX - lastX) * ticks;
+	//const DrawY = lastY + (currentY - lastY) * ticks;
+	//const DrawZ = lastZ + (currentZ - lastZ) * ticks;
 
-		//Tessellator.drawString(entity.getName(), DrawX, DrawY + entity.getEyeHeight() + 0.5, DrawZ, Renderer.color(255, 255, 255, 255), true, 0.02, false);
+	//Tessellator.drawString(entity.getName(), DrawX, DrawY + entity.getEyeHeight() + 0.5, DrawZ, Renderer.color(255, 255, 255, 255), true, 0.02, false);
 	// }
 });
 
@@ -992,7 +992,7 @@ register("renderEntity", function (entity, position, ticks, event) {
 		if (entity.getClassName() === "EntityItem") {
 			if (Settings.textInput == "testglow") {
 				GlowEntity(entity, ticks);
-            }
+			}
 			if (Settings.glowingitems) {
 				drawBox(entity, 0, 100, 255, 1.5, 0.5, 0.5, ticks);
 			}
@@ -1002,10 +1002,10 @@ register("renderEntity", function (entity, position, ticks, event) {
 				if (entity.getClassName() == ("EntityArmorStand")) {
 					// drawBox(entity, Settings.griffinmobcolor.getRed(), Settings.griffinmobcolor.getGreen(), Settings.griffinmobcolor.getBlue(), 1.2, 0.8, 2, ticks);
 					RenderLib.drawEspBox(entity.getX() - 0.5, entity.getY() - 2.5, entity.getZ() - 0.5, 0, 0, Settings.griffinmobcolor.getRed() / 255, Settings.griffinmobcolor.getGreen() / 255, Settings.griffinmobcolor.getBlue() / 255, 1, true);
-                }
-                else {
+				}
+				else {
 					drawBox(entity, Settings.griffinmobcolor.getRed() / 255, Settings.griffinmobcolor.getGreen() / 255, Settings.griffinmobcolor.getBlue() / 255, 2, 0, 0, ticks);
-                }
+				}
 			}
 		}
 		else if (removeColors(entity.getName()).includes(`Old`)) { // else if (entity.getClassName() === "EntityDragon") {
@@ -1111,7 +1111,7 @@ register("renderEntity", function (entity, position, ticks, event) {
 			}
 			if (Settings.slayerglowminiboss) {
 				drawBox(entity, Settings.slayerglowminibosscolor.getRed() / 255, Settings.slayerglowminibosscolor.getGreen() / 255, Settings.slayerglowminibosscolor.getBlue() / 255, 2, 0.8, entity.getEyeHeight() + 0.5, ticks);
-            }
+			}
 		}
 		else if (removeColors(entity.getName()).includes(`Very Ancient Skeleton`)) {
 			if (Settings.glowingveryancient) {
@@ -1194,7 +1194,7 @@ register("tick", () => {
 	// Scoreboard.setShouldRender(false);
 	var scorei = 0;
 	Scoreboard.getLines(true).forEach(line => {
-		
+
 		let unformatted = line.toString();
 		line = removeColors(line.toString());
 		if (Settings.textInput == "debugscoreboard") console.log(`${scorei} ${unformatted}`);
@@ -1203,8 +1203,8 @@ register("tick", () => {
 				unformatted = unformatted.replace(property, Saved.ReplacerArr[property])
 				Scoreboard.setLine(scorei, unformatted, true)
 			}
-			
-        }
+
+		}
 		if (Settings.dungeonhealthnotify) {
 			if (line.endsWith("❤")) {
 				line = line.split("❤")[0];
@@ -1239,39 +1239,39 @@ register("chat", function (message, event) {
 	}
 	msg = removeColors(message);
 	if (!message.includes(">") || !message.includes("[")) {
-		if (message.includes("Died in the dungeon")){
+		if (message.includes("Died in the dungeon")) {
 			var name = msg.split(" Died in the dungeon")[0]
 			if (dungeondeaths[`${name}`] == undefined || dungeondeaths[`${name}`] == NaN) {
 				dungeondeaths[`${name}`] = 0
-            }
+			}
 			dungeondeaths[`${name}`] += 1;
 			if (Settings.dungeondeathcounter) {
 				ChatLib.chat(`&cDungeon Deaths:`);
 				for (var property in dungeondeaths) {
 					ChatLib.chat(`&c${property}: ${dungeondeaths[property]}`);
 				}
-            }
+			}
 		}
 		if (msg.toLowerCase().includes("found a")) {
 			var name = msg.removeColors().toLowerCase().split(" found a")[0]
-			name = name.replace(`dungeon buff! `,`&a`);
+			name = name.replace(`dungeon buff! `, `&a`);
 			// name = name.split(" ")[0]
 			if (players[name] != undefined) {
 				// ChatLib.chat(`${players[name].getName()} at ${players[name].getX().toFixed(0)} ${players[name].getY().toFixed(0)} ${players[name].getZ().toFixed(0)}`);
 				findsecretnear(players[name], 5);
-            }
+			}
 			if (dungeonsecrets[`${name}`] == undefined || dungeondeaths[`${name}`] == NaN) {
 				dungeonsecrets[`${name}`] = 0
 			}
 			if (!name.includes(" ")) {
 				dungeonsecrets[`${name}`] += 1;
-            }
+			}
 			if (Settings.dungeonsecretcounter) {
 				ChatLib.chat(`&aDungeon Secrets: +${dungeonsecrets[name]} ${name}`);
 				for (var property in dungeonsecrets) {
 					ChatLib.chat(`&a${property}: ${dungeonsecrets[property]}`);
 				}
-            }
+			}
 		}
 		if (Settings.dungeonsolverscammers) {
 			if (msg.includes("Liam:The reward is not in my chest!")) {
@@ -1292,13 +1292,13 @@ register("chat", function (message, event) {
 			if (msg.includes("William:Both of them are telling the truth. Also, Liam has the reward in their chest.")) {
 				ChatLib.chat(`&aThe BUFF is in William's chest`);
 			}
-        }
-		
+		}
 
-		
-    }
-	
-	
+
+
+	}
+
+
 
 }).setCriteria("${message}");
 
@@ -1328,8 +1328,8 @@ register("renderEntity", (entity, pos, ticks, event) => {
 		if (entity.getEntity() instanceof EntityPlayer) {
 			let ign = entity.getName();
 			// if (user == "") {
-				// user = Player.getDisplayName().getText().removeColors();
-            // }
+			// user = Player.getDisplayName().getText().removeColors();
+			// }
 			if ((entity.getClassName() == "EntityOtherPlayerMP")) {
 				// ChatLib.chat(event)
 				TabList.getUnformattedNames().forEach(playername => {
@@ -1394,7 +1394,7 @@ register("tick", () => {
 						// console.log(`Item ${item.getUnlocalizedName()} at slot ${i}`);
 						NameBelow.push(i)
 					}
-                }
+				}
 				// console.log(`Item ${item.getUnlocalizedName()} at slot ${i}`);
 				i++
 			})
@@ -1423,10 +1423,10 @@ register("tick", () => {
 					// console.log(`Item ${item.getUnlocalizedName()} at slot ${i}`);
 					i++
 				})
-            } catch (e) {
+			} catch (e) {
 				console.log(`${e}`)
-            }
-        }
+			}
+		}
 	}
 });
 
@@ -1461,8 +1461,8 @@ register("postGuiRender", (gui, mouseX, mouseY) => {
 			if (Settings.dungeonsolverf7) {
 				Renderer.translate(0, 0, 260);
 				Renderer.drawRect(Renderer.color(0, 255, 0, 120), renderX - 8, renderY - 8, 16, 16);
-            }
-        }
+			}
+		}
 	})
 
 	NameBelow.forEach((slot) => {
@@ -1489,7 +1489,7 @@ register("postGuiRender", (gui, mouseX, mouseY) => {
 			Renderer.translate(0, 0, 260);
 			// Renderer.drawRect(Renderer.color(0, 255, 0, 120), renderX - 8, renderY - 8, 16, 16);
 			// console.log(`${Player.getOpenedInventory().getStackInSlot(slot).getName()}`);
-			Renderer.drawCircle(getcolorfromcode(Player.getOpenedInventory().getStackInSlot(slot).getName()), renderX - 8, renderY - 8, 7.5, 360,1)
+			Renderer.drawCircle(getcolorfromcode(Player.getOpenedInventory().getStackInSlot(slot).getName()), renderX - 8, renderY - 8, 7.5, 360, 1)
 
 			//Renderer.drawRect(getcolorfromcode(Player.getOpenedInventory().getStackInSlot(slot).getName()), renderX - 8, renderY - 8, 16, 15);
 
@@ -1498,7 +1498,7 @@ register("postGuiRender", (gui, mouseX, mouseY) => {
 			// renderRarity(renderX, renderY, "error");
 		}
 	})
-	
+
 	AllItems.forEach((slot) => {
 		// console.log(`${slot}`);
 		const x = slot % 9;
@@ -1592,7 +1592,7 @@ function dooverlay(event) {
 		var renderY = Renderer.screen.getHeight() - 21;
 		// Renderer.drawCircle(getcolorfromcode(`4`), renderX - 8, renderY - 8, 7.5, 360, 1)
 		loopitem = Player.getInventory().getStackInSlot(i);
-		if(loopitem != null){
+		if (loopitem != null) {
 			var color = getcolorfromcode(loopitem.getName());
 			// console.log(`${i} ${color} ${Renderer.color(255, 255, 255, Settings.itemrarityalpha)}`)
 			// Renderer.drawRect(getcolorfromcode(loopitem.getName()), renderX + 1 + i*20, renderY, 20, 20);
@@ -1601,11 +1601,11 @@ function dooverlay(event) {
 			}
 		}
 	}
-    if (Settings.withershieldcd) {
+	if (Settings.withershieldcd) {
 		// console.log(`ws 1`);
 		if (isonskyblock()) {
 			// console.log(`ws 2`);
-			
+
 			displays[`WitherShield`].setRenderLoc(Settings.withershieldx, Settings.withershieldy);
 			// console.log(`${Date.now() - WitherShieldcd}`);
 			if (Date.now() - WitherShieldcd < 5200) {
@@ -1620,15 +1620,15 @@ function dooverlay(event) {
 				displays[`WitherShield`].setShouldRender(true);
 				displays[`WitherShield`].setLine(0, `&6Shield: &aReady`);
 			}
-            else {
+			else {
 				displays[`WitherShield`].setShouldRender(false);
 				displays[`WitherShield`].setLine(0, `&6Shield: &aReady`);
-            }
+			}
 		}
-        else {
+		else {
 			displays[`WitherShield`].setShouldRender(false);
-        }
-    }
+		}
+	}
 	// Renderer.drawRect(Renderer.color(255, 255, 255, 100), 0, 0, 100, 100);
 }
 
@@ -1750,7 +1750,7 @@ function sbclickevent(e1, e2, e3) {
 	if (Settings.perf_PlayerInteract) {
 		return;
 	}
-    if (!isonskyblock()) {
+	if (!isonskyblock()) {
 		return;
 	}
 	// console.log(`sbclick ${e1} ${e2} ${e3}`);
@@ -1758,8 +1758,8 @@ function sbclickevent(e1, e2, e3) {
 		if (Date.now() - Griffincd > 2000) {
 			ChatLib.command(`whereismygriffin`);
 			Griffincd = Date.now();
-        }
-    }
+		}
+	}
 }
 register("packetSent", hitblcokevent);
 function hitblcokevent(e1, e2, e3) {
@@ -1778,11 +1778,11 @@ function hitblcokevent(e1, e2, e3) {
 						ChatLib.command(`whereismygriffin`);
 						Griffincd = Date.now();
 					}).start();
-					
+
 				}
 			}
 		}
-    }
+	}
 	// console.log(`${e1} ${e2} ${e3}`);
 }
 
@@ -1794,9 +1794,9 @@ function cancelme(e1, e2, e3, e4, e5, e6) {
 	if (Settings.perf_PlayerInteract) {
 		return;
 	}
-    try {
+	try {
 		itemrn = Player.getHeldItem().getRegistryName();
-    } catch (e) {
+	} catch (e) {
 		return;
 	}
 	if (!isonskyblock() && !(Settings.textInput == "blockswordanyway")) {
@@ -1813,7 +1813,7 @@ function cancelme(e1, e2, e3, e4, e5, e6) {
 			//else {
 			//	var t1 = float(5);
 			//	Client.sendPacket(new C08PacketPlayerBlockPlacement(Player.lookingAt().getBlockPos(), Player.getHeldItem().getItemStack(), t1, t1, t1));
-   //         }
+			//         }
 		}
 		if (`${e1}` == "RIGHT_CLICK_BLOCK") {
 			return;
@@ -1821,13 +1821,13 @@ function cancelme(e1, e2, e3, e4, e5, e6) {
 		cancel(e3)
 		// console.log(`${e1} ${e2} ${e3} ${e4} ${e5} ${e6}`);
 		Client.sendPacket(new C08PacketPlayerBlockPlacement(Player.getHeldItem().getItemStack()));
-    }
+	}
 	// ChatLib.chat("clicked? ");
 }
 
-	// if (packet instanceof C08PacketPlayerBlockPlacement) console.log(`C08! ${packet}`);
-	// console.log(packett);
-	
+// if (packet instanceof C08PacketPlayerBlockPlacement) console.log(`C08! ${packet}`);
+// console.log(packett);
+
 //register("PlayerInteract", () => {
 //	let e = Player.getHeldItem().getName();
 //	var a = World.getBlockAt(-669, 9, -275);
@@ -1871,7 +1871,7 @@ chatinput.name = "chat";
 textinputs.push(chatinput)
 //textinputs.push(errorgadol)
 chatinput.inputText = new Text("", 0, 0);
-chatinput.input  = "";
+chatinput.input = "";
 chatinput.inputlist = [];
 var inputBox = new Rectangle(Renderer.color(0, 0, 0, 65), 0, 0, 0, 0).setOutline(Renderer.color(0, 0, 0, 45), 1);
 var autocompletebox = new Rectangle(Renderer.color(0, 0, 0, 100), 0, 0, 0, 0).setOutline(Renderer.color(0, 0, 0, 100), 0);
@@ -1900,8 +1900,8 @@ function packetfun(packet, event) {
 	//}
 	//if (packett.includes(`SetSlot`)) {
 	//	cancel(event);
- //   }
-	
+	//   }
+
 	if (packett.includes("PacketTabComplete")) {
 		if (Settings.textInput == "debugtab") console.log(`${packet}`);
 		autocompletelist = [];
@@ -1918,16 +1918,16 @@ function packetfun(packet, event) {
 		if (Settings.textInput == "debugtab") console.log(`${autocompletelist}`)
 		for (var property in autocompletelistcilent) {
 			var loopvalue = autocompletelistcilent[property].split(" ");
-			var inputsplit = chatinput.input .split(" ");
+			var inputsplit = chatinput.input.split(" ");
 			// console.log(`${inputsplit.length - 1}`);
 			if (loopvalue[inputsplit.length - 1] != undefined && loopvalue[inputsplit.length - 1].startsWith(inputsplit[inputsplit.length - 1]) && inputsplit[inputsplit.length - 2] == loopvalue[inputsplit.length - 2] && inputsplit[0].startsWith(loopvalue[0][0])) {
 				// loopvalue = loopvalue.replace(input, "");
 				// console.log(`ClientCMD! work! ${loopvalue}`);
 				if (!autocompletelist.includes(loopvalue[inputsplit.length - 1])) {
 					autocompletelist[autocompletelist.length] = loopvalue[inputsplit.length - 1];
-                }
-				
-            }
+				}
+
+			}
 		}
 		for (var property in ClientCommandHandler.instance.latestAutoComplete) {
 			try {
@@ -1943,9 +1943,9 @@ function packetfun(packet, event) {
 					}
 
 				}
-            } catch (e) {
+			} catch (e) {
 				console.log(`Error Happend while trying to client tab ${e}`)
-            }	
+			}
 		}
 		tabnow = autocompletelist[0];
 
@@ -1961,14 +1961,14 @@ function sendautocompletereq(leftOfCursor, full) {
 	if (leftOfCursor[0] != undefined) {
 		// console.log(`${leftOfCursor[0]}`)
 		ClientCommandHandler.instance.autoComplete(leftOfCursor, full);
-    }
+	}
 	if (leftOfCursor != undefined || leftOfCursor != null) {
-        try {
+		try {
 			Client.sendPacket(new C14PacketTabComplete(leftOfCursor, null));
-        } catch (e) {
+		} catch (e) {
 			console.log(`Cannot req autocomplete ${e}`)
-        }
-		
+		}
+
 	}
 	// console.log(`req ${ClientCommandHandler.instance.latestAutoComplete}`);
 }
@@ -1995,10 +1995,10 @@ register("worldLoad", () => {
 					console.log(`execute join command ${val.input}`);
 					val.input = "";
 				}
-			},100);
-            
-        }
-    }
+			}, 100);
+
+		}
+	}
 })
 
 var rancommands = [];
@@ -2039,12 +2039,12 @@ function guikey(char, key, gui, event) {
 					}
 					// rancommands.push(val.input)
 					val.input = "";
-                }
+				}
 			}
 			if (val.chatfo == true || (opengui.includes("Chat") && Settings.chattabnormal)) {
-                if (val.chatfo == true) {
+				if (val.chatfo == true) {
 					// console.log(`cancel from ${property}`);
-                }
+				}
 				if (val.chatfo == true && !opengui.includes("Chat"))
 					cancel(event);
 				// var which = event.which;
@@ -2078,7 +2078,7 @@ function guikey(char, key, gui, event) {
 				}
 				if (Keyboard.isKeyDown(29)) { // ctrl
 					var inputlisttemp = val.ninput.split(" ");
-                    if (key === 47) { // v
+					if (key === 47) { // v
 						const transferable = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
 						if (transferable != null && transferable.isDataFlavorSupported(DataFlavor.stringFlavor)) {
 							var paste = transferable.getTransferData(DataFlavor.stringFlavor);
@@ -2091,7 +2091,7 @@ function guikey(char, key, gui, event) {
 						}
 					}
 					if (key === 46) { // c
-						ChatLib.command(`ct copy ${val.input}`,true);
+						ChatLib.command(`ct copy ${val.input}`, true);
 						// const transferable = Toolkit.getDefaultToolkit().getSystemClipboard().getContents(null);
 						//if (transferable != null && transferable.isDataFlavorSupported(DataFlavor.stringFlavor)) {
 						//	var paste = transferable.getTransferData(DataFlavor.stringFlavor);
@@ -2253,15 +2253,15 @@ function guikey(char, key, gui, event) {
 					}
 					chatinput.UpdateCursor();
 				}
-				else if (key === 28 &&  val.name == "chat") { // enter
+				else if (key === 28 && val.name == "chat") { // enter
 					if (val.input != "") {
 						// console.log(`added ${val.input} to ran commands`)
 						if (!rancommands.includes(`${val.input}`)) {
 							rancommands.push(`${val.input}`)
 							// Client.getChatGUI().getSentMessages()
-                        }
-						
-                    }
+						}
+
+					}
 					if (!opengui.includes("Chat")) {
 						if (val.input.startsWith("/")) {
 							val.ninput = val.input.slice(1, val.input.length)
@@ -2291,10 +2291,10 @@ function guikey(char, key, gui, event) {
 						}
 						val.UpdateCursor();
 
-                    }
+					}
 				}
 				else if (key === 208 && val.name == "chat") { // arrow up
-                    if (tabnow != "") {
+					if (tabnow != "") {
 						if (opengui.includes("Chat")) {
 							cancel(event);
 						}
@@ -2313,14 +2313,14 @@ function guikey(char, key, gui, event) {
 							val.input = textnowscam;
 							val.cursorindex = val.input.length;
 						}
-                        else {
+						else {
 							val.input = "";
 							val.cursorindex = 0;
-                        }
+						}
 						if (rancommandi >= rancommands.length) {
 							rancommandi = rancommands.length;
-                        }
-                    }
+						}
+					}
 				}
 				else if (key === 200 && val.name == "chat") { // arrow down
 					if (tabnow != "") {
@@ -2339,18 +2339,18 @@ function guikey(char, key, gui, event) {
 						}
 						tabnow = autocompletelist[tabindex];
 					}
-                    else {
+					else {
 						rancommandi -= 1;
 						var textnowscam = rancommands[rancommandi];
 						// console.log(`${rancommandi} ${textnowscam}`);
 						if (textnowscam != undefined) {
 							val.input = textnowscam;
 							val.cursorindex = val.input.length;
-                        }
+						}
 						if (rancommandi <= 0) {
 							rancommandi = 0;
 						}
-                    }
+					}
 				}
 				else if (key === 15 && val.name == "chat") { // tab
 					if (val.input != "")
@@ -2378,7 +2378,7 @@ function guikey(char, key, gui, event) {
 						// tabnow = "";
 						new Thread(() => {
 							Thread.sleep(50)
-                            if (tabnow != "") {
+							if (tabnow != "") {
 								chatinput.input = removeColors(nninput);
 								ninput = removeColors(nninput);
 								nninput = removeColors(nninput);
@@ -2386,19 +2386,19 @@ function guikey(char, key, gui, event) {
 									Client.setCurrentChatMessage(nninput);
 								}
 								chatinput.cursorindex = chatinput.input.length;
-                            }
+							}
 						}).start();
-						
+
 						//tabnow = "";
 						continue;
 					}
-                    else {
+					else {
 						if (Settings.textInput == "debugtab") console.log(`Request to tab`);
 						tabwhat = val.input;
 						// tabindex = 0;
 						sendautocompletereq(val.input, val.input);
 						// tabnow = " ";
-                    }
+					}
 
 				}
 				else if (key === 1) {
@@ -2452,14 +2452,14 @@ function guikey(char, key, gui, event) {
 					sendautocompletereq(nowval.input, nowval.input);
 					if (autocompletelist[0] != undefined) {
 						tabnow = autocompletelist[0];
-                    }
+					}
 				}).start();
 			}
 		}
 	}
-	catch(e) {
+	catch (e) {
 		console.log("ERROR HAPPEND? " + e)
-    }
+	}
 	// if (input == tabwhat) tabnow = "";
 	return;
 }
@@ -2481,13 +2481,13 @@ function clicked(x, y, c, gui, event) {
 	if (y > Renderer.screen.getHeight() - 220 && y < Renderer.screen.getHeight() - 20 && x >= 2 && x <= 202 && tabnow != "") {
 		cancel(event)
 		if (Settings.textInput == "debugtab") console.log("tab complete with click");
-		chatinput.input  = removeColors(nninput);
+		chatinput.input = removeColors(nninput);
 		ninput = removeColors(nninput);
 		nninput = removeColors(nninput);
 		if (opengui.includes("Chat") && Settings.chattabnormal) {
 			Client.setCurrentChatMessage(nninput);
 		}
-		chatinput.cursorindex = chatinput.input .length;
+		chatinput.cursorindex = chatinput.input.length;
 		tabnow = "";
 		chatinput.chatfo = true;
 		return;
@@ -2525,18 +2525,18 @@ function renderchat(gui, x, y, s4) {
 	guix = x;
 	guiy = y;
 	opengui = `${gui}`;
-    if (Settings.textInput == "debuggui") {
+	if (Settings.textInput == "debuggui") {
 		console.log(opengui);
-    }
+	}
 	if (Settings.disableupdate003) {
 		return;
 	}
 	if (!Settings.chatinvany && !opengui.includes("inventory") && !opengui.includes("Chat")) {
 		// console.log(`anywhere cancel ${opengui.includes("inventory")} ${opengui.includes("Chat")} ${opengui}`)
 		return;
-    }
+	}
 	// console.log(opengui);
-	chatinput.inputText.setString(chatinput.input )
+	chatinput.inputText.setString(chatinput.input)
 	if (opengui.includes("Chat")) {
 		if (!Settings.chattabnormal) {
 			return;
@@ -2713,7 +2713,7 @@ function renderchat(gui, x, y, s4) {
 		var scamx = 2;
 		if (!Settings.chatinv) {
 			scamx = 10000;
-        }
+		}
 		// console.log("postrender autocompletext");
 		chatinput.inputText
 			.setX(scamx + 2)
@@ -2730,29 +2730,29 @@ function renderchat(gui, x, y, s4) {
 			.draw();
 	}
 }
-	//for (var property in dungeonsecrets) {
-	//ChatLib.chat(`&a${property}: ${dungeonsecrets[property]}`);
-	//}
+//for (var property in dungeonsecrets) {
+//ChatLib.chat(`&a${property}: ${dungeonsecrets[property]}`);
+//}
 
 
-	// Client.setCurrentChatMessage("/");
-	// var chat = Client.getChatGUI();
-	// console.log(`${chat}`);
+// Client.setCurrentChatMessage("/");
+// var chat = Client.getChatGUI();
+// console.log(`${chat}`);
 
-	// console.log(`${s1} ${s2} ${s3} ${s4}`);
-	// var no = s1.inventorySlots;
-	// console.log(`${s1} ${no}`);
-	// console.log(`1. ${Client.currentGui.get()}`);
-	// console.log(`2. ${s1}`);
-	// Client.currentGui.close()
-	// console.log(`${s3.mc.ingameGUI.getChatGUI()}`);
-	//let inventory;
-	//try {
-	//	inventory = Player.getOpenedInventory();
-	//} catch (e) {
-	//	return;
-	//}
-	// console.log(`${inventory.inventorySlots()}`);
+// console.log(`${s1} ${s2} ${s3} ${s4}`);
+// var no = s1.inventorySlots;
+// console.log(`${s1} ${no}`);
+// console.log(`1. ${Client.currentGui.get()}`);
+// console.log(`2. ${s1}`);
+// Client.currentGui.close()
+// console.log(`${s3.mc.ingameGUI.getChatGUI()}`);
+//let inventory;
+//try {
+//	inventory = Player.getOpenedInventory();
+//} catch (e) {
+//	return;
+//}
+// console.log(`${inventory.inventorySlots()}`);
 var ticked = 0;
 var f7autocd = 0;
 register("tick", togglecursor);
@@ -2769,7 +2769,7 @@ function togglecursor() {
 		}
 		//if (chatinput.cursorindex > chatinput.input.length) {
 		//	chatinput.cursorindex = chatinput.input.length;
-  //      }
+		//      }
 		//if (chatinput.cursorindex == chatinput.input .length) {
 		//	if (chatinput.cursor == " ") {
 		//		chatinput.cursor = "_";
@@ -2777,20 +2777,20 @@ function togglecursor() {
 		//	else {
 		//		chatinput.cursor = " ";
 		//	}
-  //      } else {
+		//      } else {
 		//	if (chatinput.cursor == "") {
 		//		chatinput.cursor = `${chatinput.cursorindex}`;
 		//	}
 		//	else {
 		//		chatinput.cursor = "";
 		//	}
-  //      }
-		
+		//      }
+
 	}
 	if (opengui.includes("Chat") && Settings.chattabnormal) {
-		chatinput.input  = Client.getCurrentChatMessage();
+		chatinput.input = Client.getCurrentChatMessage();
 		chatinput.cursor = "";
-	}	
+	}
 	if (Settings.textInput == "F7AUTO" && removeColors(Player.getOpenedInventory().getName()).startsWith("Click On All ")) {
 		f7autocd++;
 		if (f7autocd >= 20) {
@@ -2842,8 +2842,8 @@ register("command", (...args) => {
 			errorcmd += args[property];
 			if (iproperty < args.length) {
 				errorcmd += " ";
-            }
-        }
+			}
+		}
 	}
 	console.log(`scam ${errorcmd}`);
 	if (args[0] == "add" && args[1] != undefined) {
@@ -2861,7 +2861,7 @@ register("command", (...args) => {
 				ChatLib.chat(`[BP TAB] Removed tab for ${Saved.CilentCommandList[property]}`)
 				Saved.CilentCommandList.splice(iproperty, 1);
 				// delete Saved.CilentCommandList[property];
-			}	
+			}
 		}
 		return;
 	}
@@ -2881,7 +2881,7 @@ register("command", (...args) => {
 			ChatLib.chat(`BROKEN TAB AT ${property}`)
 			Saved.CilentCommandList.splice(iproperty, 1);
 			// delete Saved.CilentCommandList[property];
-        }
+		}
 	}
 	ChatLib.chat("Add with: /sbdragonstab add/remove <text>");
 	return;
@@ -2895,7 +2895,7 @@ function makeplayerrightclick() {
 		_x = new intType(Player.lookingAt().getX());
 		_y = new intType(Player.lookingAt().getY());
 		_z = new intType(Player.lookingAt().getZ());
-    }
+	}
 	var _d = new intType(0);
 	var _blockpos = new BlockPos(_x, _y, _z);
 	Client.sendPacket(new C08PacketPlayerBlockPlacement(Player.getHeldItem().getItemStack()));
@@ -3111,9 +3111,9 @@ function chatreplace(event) {
 }
 // scam to use later Player.getPlayer().getDistanceTo(x, y, z)
 function findsecretnear(entity, num) {
-    if (!Settings.AutoWaypoints) {
+	if (!Settings.AutoWaypoints) {
 		return;
-    }
+	}
 	var loopedblocks = [];
 	var done = false;
 	new Thread(() => {
@@ -3128,17 +3128,17 @@ function findsecretnear(entity, num) {
 						// ChatLib.chat(`${Saved.AutoWaypoints[blockloc]}`);
 						blockloc = "C " + blockloc + " ON";
 						if (Saved.AutoWaypoints[blockloc] == undefined) {
-							
+
 							ChatLib.chat(`Oh! Thats a new one!`);
 							Saved.AutoWaypoints[blockloc] = blockloc;
-                        }
+						}
 					}
 					if (loopedblock.getRegistryName().includes("skull")) {
 						ChatLib.chat(`Found Skull at ${blockloc}`);
 						console.log(`Found Skull at ${blockloc}`);
 						blockloc = "S " + blockloc;
 						if (Saved.AutoWaypoints[blockloc] == undefined) {
-							
+
 							ChatLib.chat(`Oh! Thats a new one!`);
 							Saved.AutoWaypoints[blockloc] = blockloc;
 						}
@@ -3149,7 +3149,7 @@ function findsecretnear(entity, num) {
 						// ChatLib.chat(`${Saved.AutoWaypoints[blockloc]}`);
 						blockloc = "L " + blockloc;
 						if (Saved.AutoWaypoints[blockloc] == undefined) {
-							
+
 							ChatLib.chat(`Oh! Thats a new one!`);
 							Saved.AutoWaypoints[blockloc] = blockloc;
 						}
@@ -3177,14 +3177,14 @@ register("command", () => {
 }).setCommandName("sbdragonsdevtest");
 
 register("command", (...args) => {
-    if (args[0] == "clear") {
+	if (args[0] == "clear") {
 		for (var property in Saved.RareDrops) {
 			delete Saved.RareDrops[property];
 		}
 		ChatLib.chat("Cleared Drops")
 	}
 	else if (args[0] == "remove") {
-        if (args[1] == undefined) {
+		if (args[1] == undefined) {
 			ChatLib.chat(`ERROR! use /sbdragonsdrops remove <number>`)
 			return;
 		}
@@ -3196,7 +3196,7 @@ register("command", (...args) => {
 			// `${i} ${property} §6x${Saved.RareDrops[property]}`
 			if (i == removei) {
 				removed = property;
-            }
+			}
 			i++;
 		}
 		delete Saved.RareDrops[removed];
@@ -3244,9 +3244,9 @@ register("command", (...args) => {
 		Saved.RareDrops[removed] = addnum;
 		ChatLib.chat(`set ${removed} to ${addnum}`)
 	}
-    else {
+	else {
 		ChatLib.chat(`ERROR! use /sbdragonsdrops clear/remove/add/set`);
-    }
+	}
 	displays[`dropdisplay`].clearLines();
 }).setCommandName("sbdragonsdrops");
 
@@ -3259,13 +3259,13 @@ function scrollWheelSupportGui() {
 	if (dWheel == 0) return;
 	WheelMove = dWheel;
 	// if (dWheel > 0) {
-		// console.log(`Wheel Up`);
-		// Scroll up
-		// scrollingData.offsetY += scrollingData.mouseOffsetter;
+	// console.log(`Wheel Up`);
+	// Scroll up
+	// scrollingData.offsetY += scrollingData.mouseOffsetter;
 	// } else {
-		// console.log(`Wheel Down`);
-		// Scroll down
-		// scrollingData.offsetY -= scrollingData.mouseOffsetter;
+	// console.log(`Wheel Down`);
+	// Scroll down
+	// scrollingData.offsetY -= scrollingData.mouseOffsetter;
 	// }
 }
 register('tick', scrollWheelSupportGui);
@@ -3284,7 +3284,7 @@ register("command", () => {
 
 register("postGuiRender", guiwaypointsrender);
 guiwaypoints.registerClicked(guiwaypointsclicked);
-function guiwaypointsrender(s1,s2,s3,s4) {
+function guiwaypointsrender(s1, s2, s3, s4) {
 	if (Settings.perf_postGuiRender) {
 		return;
 	}
@@ -3365,7 +3365,7 @@ function guiwaypointsrender(s1,s2,s3,s4) {
 	if (guiwaypoints.isOpen()) {
 		scamrect.draw();
 		scamrect2.draw();
-    }
+	}
 }
 function guiwaypointsclicked(x, y, m) {
 	// console.log(`${x} ${y} ${m} ${g}`);
@@ -3380,9 +3380,9 @@ function guiwaypointsclicked(x, y, m) {
 				if (waypointsguibuttons[property + " T1"].getString() == "ON") {
 					waypointsguibuttons[property + " T1"].setString("OFF");
 				}
-                else {
+				else {
 					waypointsguibuttons[property + " T1"].setString("ON");
-                }
+				}
 			}
 			if (x >= Renderer.screen.getWidth() / 4 + 500 && x <= Renderer.screen.getWidth() / 4 + 520) {
 				console.log(`TOGGLE ${property}`);
@@ -3401,7 +3401,7 @@ function guiwaypointsclicked(x, y, m) {
 					delete waypointsguibuttons[property + " Z"];
 				}
 			}
-        }
+		}
 	}
 }
 register("postGuiRender", () => {
@@ -3444,13 +3444,13 @@ function SoundPlayscam(pos, name, vol, pitch, cata, event) {
 	if (`${name}`.includes("mob.zombie.remedy")) {
 		// console.log(`Wither Shield ACTIVE!`);
 		WitherShieldcd = Date.now();
-    }
+	}
 	if (name == "random.levelup") {
 		WitherShieldcd = 0;
-    }
+	}
 	if (Settings.textInput == "scamsound") {
 		console.log(`N=${name} V=${vol} P=${pitch} C=${cata}`);
-    }
+	}
 }
 
 //function GlowEntity(entity, partialTicks) {
@@ -3848,15 +3848,14 @@ if (Settings.autoupdater) {
 		new Thread(() => {
 			var doupdate = false;
 			let pmetadata = FileLib.getUrlContent("https://raw.githubusercontent.com/lidanthedev/SBdragons/master/metadata.json");
-			let pastebinmetadata = JSON.parse(pmetadata);
-			// console.log(`Pastebin ver ${pastebinmetadata.version}`);
+			let githubmetadata = JSON.parse(pmetadata);
 			var nowver = metadata.version.split(`.`);
-			var gitver = pastebinmetadata.version.split(`.`);
+			var gitver = githubmetadata.version.split(`.`);
 			for (var property in nowver) {
 				var nver = parseInt(nowver[property])
 				var pver = parseInt(gitver[property])
 				if (nver < pver) {
-					ChatLib.chat(`&e[SBdragons] Update Available! Preparing to install... ${metadata.version} -> ${pastebinmetadata.version}`);
+					ChatLib.chat(`&e[SBdragons] Update Available! Preparing to install...`);
 					doupdate = true;
 					break;
 				}
@@ -3873,7 +3872,7 @@ if (Settings.autoupdater) {
 				FileLib.write("SBdragons", "SBdragons.old/index.js", FileLib.read("SBdragons", "index.js"));
 				FileLib.write("SBdragons", "SBdragons.old/config.js", FileLib.read("SBdragons", "config.js"));
 
-				ChatLib.chat(`&e[SBdragons] Updating to ${pastebinmetadata.version}... [from ${metadata.version}]`);
+				ChatLib.chat(`&e[SBdragons] Updating to ${githubmetadata.version}... [from ${metadata.version}]`);
 				let githubindex = FileLib.getUrlContent("https://raw.githubusercontent.com/lidanthedev/SBdragons/master/index.js");
 				let githubconfig = FileLib.getUrlContent("https://raw.githubusercontent.com/lidanthedev/SBdragons/master/config.js");
 
@@ -3892,9 +3891,9 @@ if (Settings.autoupdater) {
 			return;
 		}).start()
 	}
-	catch(e) {
+	catch (e) {
 		console.log(`Auto Updater Failed due to ${e}`);
-    }
+	}
 }
 
 // console.log(removeColors(`error &e §eERROR`));
@@ -3909,12 +3908,12 @@ function removeColors(text) {
 	//}
 	//if (!whatclass.includes(`string`)) {
 	//	// var textp = `${text}`
-		
+
 	//	console.log(`removecolors not text ${whatclass}`);
 	//	// text = `${text}`;
 	//	return ChatLib.removeFormatting(text);
- //   }
-    try {
+	//   }
+	try {
 		if (Settings.textInput == "removecolors1") {
 			textlist = text.split("");
 			for (var i in textlist) {
@@ -3972,7 +3971,7 @@ function removeColors(text) {
 		}
 	} catch (e) {
 		textn = ChatLib.removeFormatting(text);
-    }
+	}
 	// console.log(`${textn}`);
 	return textn;
 }
