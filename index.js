@@ -3847,16 +3847,16 @@ if (Settings.autoupdater) {
 
 		new Thread(() => {
 			var doupdate = false;
-			let pmetadata = FileLib.getUrlContent("https://pastebin.com/raw/UpUuGFNZ");
+			let pmetadata = FileLib.getUrlContent("https://raw.githubusercontent.com/lidanthedev/SBdragons/master/metadata.json");
 			let pastebinmetadata = JSON.parse(pmetadata);
 			// console.log(`Pastebin ver ${pastebinmetadata.version}`);
 			var nowver = metadata.version.split(`.`);
-			var pasver = pastebinmetadata.version.split(`.`);
+			var gitver = pastebinmetadata.version.split(`.`);
 			for (var property in nowver) {
 				var nver = parseInt(nowver[property])
-				var pver = parseInt(pasver[property])
+				var pver = parseInt(gitver[property])
 				if (nver < pver) {
-					ChatLib.chat(`&e[SBdragons] Update Available! Preparing to install...`);
+					ChatLib.chat(`&e[SBdragons] Update Available! Preparing to install... ${metadata.version} -> ${pastebinmetadata.version}`);
 					doupdate = true;
 					break;
 				}
@@ -3874,13 +3874,12 @@ if (Settings.autoupdater) {
 				FileLib.write("SBdragons", "SBdragons.old/config.js", FileLib.read("SBdragons", "config.js"));
 
 				ChatLib.chat(`&e[SBdragons] Updating to ${pastebinmetadata.version}... [from ${metadata.version}]`);
-				let pastebinindex = FileLib.getUrlContent("https://pastebin.com/raw/1GwKjDLt");
-				let pastebinconfig = FileLib.getUrlContent("https://pastebin.com/raw/C8sFTHdq");
+				let githubindex = FileLib.getUrlContent("https://raw.githubusercontent.com/lidanthedev/SBdragons/master/index.js");
+				let githubconfig = FileLib.getUrlContent("https://raw.githubusercontent.com/lidanthedev/SBdragons/master/config.js");
 
 				FileLib.write("SBdragons", "metadata.json", pmetadata);
-				FileLib.write("SBdragons", "index.js", pastebinindex);
-				FileLib.write("SBdragons", "config.js", pastebinconfig);
-
+				FileLib.write("SBdragons", "index.js", githubindex);
+				FileLib.write("SBdragons", "config.js", githubconfig);
 
 				if (Settings.autoupdaterreload) {
 					ChatLib.chat(`&e[SBdragons] Update Finished! Reloading...`);
