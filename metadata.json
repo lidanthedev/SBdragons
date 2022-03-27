@@ -3,8 +3,8 @@
   "name": "&8&l&kX&b&lSkyblock &d&lDragons&8&l&kX",
   "author": "LidanTheGamer and MAXIIIIII",
   "entry": "index.js",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "requires": [ "Vigilance", "PogData", "FileUtilities", "RenderLib" ],
   "description": "&6by &bLidanTheGamer &6, &0MAXIIIIII &6And &aXxXofirXxX\n\n Adds Useful addons for The Skyblock Dragons Server\n Like Solvers\n Backporting\n Action bar mover",
-  "changelog": "Made the module compatible with the new version of ChatTriggers"
+  "changelog": "Fixed Griffin and skyblock check"
 }

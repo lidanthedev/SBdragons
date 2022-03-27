@@ -344,7 +344,7 @@ function isonskyblock() {
 	if (Settings.textInput == "alwaysskyblock") {
 		return true;
 	}
-	if (Scoreboard.getScoreboardTitle().includes("Skyblock Dragons")) {
+	if (Scoreboard.getScoreboardTitle().toLowerCase().includes("skyblock")) {
 		return true;
 	}
 	return false;
@@ -769,7 +769,8 @@ register("renderWorld", () => {
 		// console.log(getDistance(Player.getX(), Player.getY(), Player.getZ(), -975, 131 ,-1097));
 	}
 	if (Settings.griffinburrowesp || Settings.griffinburrowwaypoint) {
-		if (world.toLowerCase().includes(`griffin`) && griffinloc[2] != undefined) {
+		// console.log(`griffinloc[2] ${griffinloc[2]}`);
+		if (Player.getHeldItem() != null && Player.getHeldItem().getName().includes(`Spade`) && griffinloc[2] != undefined) {
 			// console.log(`box at ${griffinloc}`);
 			// drawBoxAtBlock(griffinloc[0], griffinloc[1], griffinloc[2], Settings.griffincolor.getRed(), Settings.griffincolor.getGreen(), Settings.griffincolor.getBlue());
 			// RenderLib.drawEspBox(griffinloc[0], griffinloc[1], 1, 1, griffinloc[2], Settings.griffincolor.getRed(), Settings.griffincolor.getGreen(), Settings.griffincolor.getBlue(), 1, true);
@@ -1808,7 +1809,7 @@ function cancelme(e1, e2, e3, e4, e5, e6) {
 	if ((itemrn.includes("sword") && Settings.antiswordblock) || (Player.getHeldItem().getName().includes(`Terminator`) || Player.getHeldItem().getName().includes(`Juju`) && Settings.slayerfixshortbow)) {
 		if (Player.lookingAt() instanceof Block) {
 			// ChatLib.chat("work 1");
-			if (Player.lookingAt().getRegistryName().includes("chest")) {
+			if (Player.lookingAt().type.getRegistryName().includes("chest")) {
 				// ChatLib.chat("work 2");
 				return;
 			}
@@ -1932,12 +1933,14 @@ function packetfun(packet, event) {
 			}
 		}
 		for (var property in ClientCommandHandler.instance.latestAutoComplete) {
-			try {
+			// try {
 				var unlv = removeColors(ClientCommandHandler.instance.latestAutoComplete[property])
 				var loopvalue = unlv.split(" ");
 				var inputsplit = chatinput.input.split(" ");
 				// console.log(`${loopvalue}`);
-				if (loopvalue[inputsplit.length - 1] != undefined && loopvalue[inputsplit.length - 1].startsWith(inputsplit[inputsplit.length - 1]) && inputsplit[inputsplit.length - 2] == loopvalue[inputsplit.length - 2] && inputsplit[0].startsWith(loopvalue[0][0])) {
+				// console.log(`${inputsplit}`);
+				if (loopvalue[inputsplit.length - 1] != undefined && loopvalue[inputsplit.length - 1].startsWith(inputsplit[inputsplit.length - 1]) && inputsplit[inputsplit.length - 2] == loopvalue[inputsplit.length - 2] && inputsplit[0].startsWith(loopvalue[0].charAt(0))) {
+					// loopvalue[inputsplit.length - 1] != undefined && loopvalue[inputsplit.length - 1].startsWith(inputsplit[inputsplit.length - 1]) && inputsplit[inputsplit.length - 2] == loopvalue[inputsplit.length - 2] && inputsplit[0].startsWith(loopvalue[0][0])
 					// loopvalue = loopvalue.replace(input, "");
 					// console.log(`ClientCMD! work! ${loopvalue}`);
 					if (!autocompletelist.includes(loopvalue[inputsplit.length - 1])) {
@@ -1945,9 +1948,9 @@ function packetfun(packet, event) {
 					}
 
 				}
-			} catch (e) {
-				console.log(`Error Happend while trying to client tab ${e}`)
-			}
+			// } catch (e) {
+			// 	console.log(`Error Happend while trying to client tab ${e}`)
+			// }
 		}
 		tabnow = autocompletelist[0];
 
@@ -2969,8 +2972,9 @@ function chatreplace(event) {
 				griffinloc[1] = parseInt(Math.floor(griffinloc[1]));
 				griffinloc[2] = parseFloat(scamgadol[3]);
 				griffinloc[2] = parseInt(Math.floor(griffinloc[2]));
-				return;
 				// console.log(`${griffinloc}`);
+				return;
+				// 
 			}
 			//griffin at x|-114.5, y|64.5, z|45.5
 		}
